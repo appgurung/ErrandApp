@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onesimpleapiModelStoreContainer" CdmEntityContainer="ErrandEntities">
+    <EntitySetMapping Name="Registerations">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.Registeration)">
+        <MappingFragment StoreEntitySet="Registerations">
+          <ScalarProperty Name="RegisterationId" ColumnName="RegisterationId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeProfileImages">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErrandeeProfileImage)">
+        <MappingFragment StoreEntitySet="ErrandeeProfileImages">
+          <ScalarProperty Name="ProfileImageId" ColumnName="ProfileImageId" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="ProfileImageName" ColumnName="ProfileImageName" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErranderRegisterations">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErranderRegisteration)">
+        <MappingFragment StoreEntitySet="ErranderRegisterations">
+          <ScalarProperty Name="ErranderId" ColumnName="ErranderId" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandTypes">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErrandType)">
+        <MappingFragment StoreEntitySet="ErrandTypes">
+          <ScalarProperty Name="ErrandTypeId" ColumnName="ErrandTypeId" />
+          <ScalarProperty Name="ErrandName" ColumnName="ErrandName" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.Request)">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+          <ScalarProperty Name="ErranderID" ColumnName="ErranderID" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="ErrandID" ColumnName="ErrandID" />
+          <ScalarProperty Name="PickUpLocation" ColumnName="PickUpLocation" />
+          <ScalarProperty Name="DropOffLocation" ColumnName="DropOffLocation" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeAvailabilities">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErrandeeAvailability)">
+        <MappingFragment StoreEntitySet="ErrandeeAvailabilities">
+          <ScalarProperty Name="AvailabilityID" ColumnName="AvailabilityID" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErrandeeLocation)">
+        <MappingFragment StoreEntitySet="ErrandeeLocations">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ErrandeeEmail" ColumnName="ErrandeeEmail" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErranderLocations">
+      <EntityTypeMapping TypeName="IsTypeOf(onesimpleapiModel.ErranderLocation)">
+        <MappingFragment StoreEntitySet="ErranderLocations">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="ErranderEmail" ColumnName="ErranderEmail" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Long" ColumnName="Long" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

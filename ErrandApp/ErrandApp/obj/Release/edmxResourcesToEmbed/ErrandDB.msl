@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="onesimpleapiModelStoreContainer" CdmEntityContainer="ErrandEntities">
+    <EntitySetMapping Name="First3DRequest">
+      <EntityTypeMapping TypeName="onesimpleapiModel.First3DRequest">
+        <MappingFragment StoreEntitySet="First3DRequest">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+          <ScalarProperty Name="Acs_url" ColumnName="Acs_url" />
+          <ScalarProperty Name="Datacash_reference" ColumnName="Datacash_reference" />
+          <ScalarProperty Name="Pareq_message" ColumnName="Pareq_message" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Second3DRequest">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Second3DRequest">
+        <MappingFragment StoreEntitySet="Second3DRequest">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+          <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tokens">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Token">
+        <MappingFragment StoreEntitySet="Token">
+          <ScalarProperty Name="TokenID" ColumnName="TokenID" />
+          <ScalarProperty Name="TokenNo" ColumnName="TokenNo" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="MaskedCardNumber" ColumnName="MaskedCardNumber" />
+          <ScalarProperty Name="MerchantNumber" ColumnName="MerchantNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transactions">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Transaction">
+        <MappingFragment StoreEntitySet="Transactions">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="TransactionNumber" ColumnName="TransactionNumber" />
+          <ScalarProperty Name="ReceiptNumber" ColumnName="ReceiptNumber" />
+          <ScalarProperty Name="AcquirerResponseCode" ColumnName="AcquirerResponseCode" />
+          <ScalarProperty Name="AuthorisationResult" ColumnName="AuthorisationResult" />
+          <ScalarProperty Name="AuthoriseId" ColumnName="AuthoriseId" />
+          <ScalarProperty Name="CardType" ColumnName="CardType" />
+          <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+          <ScalarProperty Name="SettlementDate" ColumnName="SettlementDate" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="SoapRequest" ColumnName="SoapRequest" />
+          <ScalarProperty Name="SoapResponse" ColumnName="SoapResponse" />
+          <ScalarProperty Name="ProcessedBy" ColumnName="ProcessedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendors">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Vendor">
+        <MappingFragment StoreEntitySet="Vendor">
+          <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+          <ScalarProperty Name="CardPrivateKey" ColumnName="CardPrivateKey" />
+          <ScalarProperty Name="CardPublicKey" ColumnName="CardPublicKey" />
+          <ScalarProperty Name="CardEncryptionKey" ColumnName="CardEncryptionKey" />
+          <ScalarProperty Name="AirtimePrivateKey" ColumnName="AirtimePrivateKey" />
+          <ScalarProperty Name="AirtimePublicKey" ColumnName="AirtimePublicKey" />
+          <ScalarProperty Name="AirtimeEncryptionKey" ColumnName="AirtimeEncryptionKey" />
+          <ScalarProperty Name="SmsPrivateKey" ColumnName="SmsPrivateKey" />
+          <ScalarProperty Name="SmsPublicKey" ColumnName="SmsPublicKey" />
+          <ScalarProperty Name="SmsEncryptionKey" ColumnName="SmsEncryptionKey" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Registerations">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Registeration">
+        <MappingFragment StoreEntitySet="Registeration">
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="RegisterationId" ColumnName="RegisterationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeProfileImages">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErrandeeProfileImage">
+        <MappingFragment StoreEntitySet="ErrandeeProfileImage">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="ProfileImageName" ColumnName="ProfileImageName" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="ProfileImageId" ColumnName="ProfileImageId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErranderRegisterations">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErranderRegisteration">
+        <MappingFragment StoreEntitySet="ErranderRegisteration">
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="ErranderId" ColumnName="ErranderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandTypes">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErrandType">
+        <MappingFragment StoreEntitySet="ErrandType">
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="ErrandName" ColumnName="ErrandName" />
+          <ScalarProperty Name="ErrandTypeId" ColumnName="ErrandTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="onesimpleapiModel.Request">
+        <MappingFragment StoreEntitySet="Request">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DropOffLocation" ColumnName="DropOffLocation" />
+          <ScalarProperty Name="PickUpLocation" ColumnName="PickUpLocation" />
+          <ScalarProperty Name="ErrandID" ColumnName="ErrandID" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="ErranderID" ColumnName="ErranderID" />
+          <ScalarProperty Name="RequestId" ColumnName="RequestId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeAvailabilities">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErrandeeAvailability">
+        <MappingFragment StoreEntitySet="ErrandeeAvailability">
+          <ScalarProperty Name="isAvailable" ColumnName="isAvailable" />
+          <ScalarProperty Name="ErrandeeID" ColumnName="ErrandeeID" />
+          <ScalarProperty Name="AvailabilityID" ColumnName="AvailabilityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrandeeLocations">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErrandeeLocation">
+        <MappingFragment StoreEntitySet="ErrandeeLocation">
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="ErrandeeEmail" ColumnName="ErrandeeEmail" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErranderLocations">
+      <EntityTypeMapping TypeName="onesimpleapiModel.ErranderLocation">
+        <MappingFragment StoreEntitySet="ErranderLocation">
+          <ScalarProperty Name="Long" ColumnName="Long" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="ErranderEmail" ColumnName="ErranderEmail" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

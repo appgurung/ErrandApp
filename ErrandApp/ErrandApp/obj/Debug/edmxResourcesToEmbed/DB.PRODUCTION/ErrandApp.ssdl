@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="valuechargeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AccountDetails">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AccountNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CardDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaskedCardNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ErranderID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CardType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CardNo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CVV" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Exp" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CardPayment">
+    <Key>
+      <PropertyRef Name="CardPaymentID" />
+    </Key>
+    <Property Name="CardPaymentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="50" />
+    <Property Name="TokenID" Type="nchar" MaxLength="50" />
+    <Property Name="CardType" Type="nchar" MaxLength="50" />
+    <Property Name="MaskedCardNo" Type="nchar" MaxLength="50" />
+    <Property Name="isDefault" Type="bit" />
+  </EntityType>
+  <EntityType Name="Earnings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="DateEarned" Type="datetime" Nullable="false" />
+    <Property Name="IsLiquidated" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrandeeAvailabilities">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="isAvailable" Type="bit" />
+  </EntityType>
+  <EntityType Name="ErrandeeLocations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeEmail" Type="nchar" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" MaxLength="200" />
+    <Property Name="Long" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ErrandeeProfileImages">
+    <Key>
+      <PropertyRef Name="ProfileImageId" />
+    </Key>
+    <Property Name="ProfileImageId" Type="int" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="ProfileImageName" Type="nchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandeeRatings">
+    <Key>
+      <PropertyRef Name="RatingId" />
+    </Key>
+    <Property Name="RatingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ErranderID" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Review" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="RateDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErranderLocations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderEmail" Type="nchar" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" MaxLength="200" />
+    <Property Name="Long" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ErranderRegisterations">
+    <Key>
+      <PropertyRef Name="ErranderId" />
+    </Key>
+    <Property Name="ErranderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nchar" MaxLength="200" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="Password" Type="nchar" MaxLength="100" />
+    <Property Name="Address" Type="nchar" MaxLength="100" />
+    <Property Name="Gender" Type="nchar" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandTypes">
+    <Key>
+      <PropertyRef Name="ErrandTypeId" />
+    </Key>
+    <Property Name="ErrandTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandName" Type="nchar" MaxLength="100" />
+    <Property Name="Category" Type="nchar" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" MaxLength="100" />
+    <Property Name="Cost" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PaymentMethods">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsCash" Type="bit" Nullable="false" />
+    <Property Name="IsCard" Type="bit" Nullable="false" />
+    <Property Name="ErranderID" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registerations">
+    <Key>
+      <PropertyRef Name="RegisterationId" />
+    </Key>
+    <Property Name="RegisterationId" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nchar" MaxLength="100" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="UserName" Type="nchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="100" />
+    <Property Name="Password" Type="nchar" MaxLength="200" />
+    <Property Name="Location" Type="nchar" MaxLength="100" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderID" Type="nchar" MaxLength="100" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="ErrandID" Type="nchar" MaxLength="100" />
+    <Property Name="PickUpLocation" Type="nchar" MaxLength="100" />
+    <Property Name="DropOffLocation" Type="nchar" MaxLength="100" />
+    <Property Name="Status" Type="nchar" MaxLength="100" />
+    <Property Name="Date" Type="nchar" MaxLength="100" />
+    <Property Name="IsComplete" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="valuechargeModelStoreContainer">
+    <EntitySet Name="AccountDetails" EntityType="Self.AccountDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardDetails" EntityType="Self.CardDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CardPayment" EntityType="Self.CardPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Earnings" EntityType="Self.Earnings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeAvailabilities" EntityType="Self.ErrandeeAvailabilities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeLocations" EntityType="Self.ErrandeeLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeProfileImages" EntityType="Self.ErrandeeProfileImages" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeRatings" EntityType="Self.ErrandeeRatings" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErranderLocations" EntityType="Self.ErranderLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErranderRegisterations" EntityType="Self.ErranderRegisterations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandTypes" EntityType="Self.ErrandTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registerations" EntityType="Self.Registerations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

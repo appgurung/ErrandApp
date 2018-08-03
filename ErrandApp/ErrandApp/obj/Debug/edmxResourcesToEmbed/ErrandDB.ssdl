@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onesimpleapiModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="onesimpleapiModelStoreContainer">
+    <EntitySet Name="Registerations" EntityType="onesimpleapiModel.Store.Registerations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrandeeProfileImages" EntityType="onesimpleapiModel.Store.ErrandeeProfileImages" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErranderRegisterations" EntityType="onesimpleapiModel.Store.ErranderRegisterations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrandTypes" EntityType="onesimpleapiModel.Store.ErrandTypes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Requests" EntityType="onesimpleapiModel.Store.Requests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrandeeAvailabilities" EntityType="onesimpleapiModel.Store.ErrandeeAvailabilities" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErrandeeLocations" EntityType="onesimpleapiModel.Store.ErrandeeLocations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ErranderLocations" EntityType="onesimpleapiModel.Store.ErranderLocations" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Registerations">
+    <Key>
+      <PropertyRef Name="RegisterationId" />
+    </Key>
+    <Property Name="RegisterationId" Type="int" Nullable="false" />
+    <Property Name="FullName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Email" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="UserName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Password" Type="nchar" Nullable="true" MaxLength="200" />
+    <Property Name="Location" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandeeProfileImages">
+    <Key>
+      <PropertyRef Name="ProfileImageId" />
+    </Key>
+    <Property Name="ProfileImageId" Type="int" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ProfileImageName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErranderRegisterations">
+    <Key>
+      <PropertyRef Name="ErranderId" />
+    </Key>
+    <Property Name="ErranderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nchar" Nullable="true" MaxLength="200" />
+    <Property Name="Email" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Password" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Address" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Gender" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandTypes">
+    <Key>
+      <PropertyRef Name="ErrandTypeId" />
+    </Key>
+    <Property Name="ErrandTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandName" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Category" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Cost" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderID" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ErrandeeID" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="ErrandID" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="PickUpLocation" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="DropOffLocation" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Status" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Date" Type="nchar" Nullable="true" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandeeAvailabilities">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="isAvailable" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="ErrandeeLocations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeEmail" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" Nullable="true" MaxLength="200" />
+    <Property Name="Long" Type="nchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ErranderLocations">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderEmail" Type="nchar" Nullable="true" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" Nullable="true" MaxLength="200" />
+    <Property Name="Long" Type="nchar" Nullable="true" MaxLength="200" />
+  </EntityType>
+</Schema>

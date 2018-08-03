@@ -1,0 +1,311 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ErrandApp.WEBAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ErrandApp.WEBAPI.Controllers.ErrandAppController">
+            <summary>
+            RESTFUL API SERVICES FOR MOBILE CONSUMPTION V 1.0 
+            </summary>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.createErrandee(ErrandApp.Models.CreateErrandee)">
+            <summary>
+            Use this to create errandee or errand runners
+            </summary>
+            <param name="errandee"></param>
+            <returns>Response code 00 means errandee was created"</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErrandee(ErrandApp.Models.CreateErrandee)">
+            <summary>
+            Use this to update errandee or errand runners
+            </summary>
+            <param name="errandee"></param>
+            <returns>Response code 00 means update was successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.deleteErrandee(System.String)">
+            <summary>
+            Use this to delete errandee or errand runners
+            </summary>
+            <param name="Email"></param>
+            <returns>Response code 00 means successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.erandeeLoginAuthentication(ErrandApp.Models.Login)">
+            <summary>
+            Use this to authenticate errandee login process. Identity can be either Email or PhoneNo. After login, data of errandee will be returned
+            </summary>
+            <param name="login"></param>
+            <returns>Response code 00 means successful, 02 means invalid HTTP Post/Get Parameters.</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErrandeeDetails(System.String)">
+            <summary>
+            Use this to get errandee post details. You can also get errandee details from 'erandeeLoginAuthentication' after login
+            </summary>
+            <param name="Identity"></param>
+            <returns>Response code 00 means request/login was successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updatePassword(System.String,System.String)">
+            <summary>
+            Use this to update password. Identity can be either errandee Email or PhoneNo
+            </summary>
+            <param name="Identity"></param>
+            <param name="NewPassword"></param>
+            <returns>Response code 00 means password update request was successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.uploadProfileImage(System.Web.HttpPostedFileBase,System.String)">
+            <summary>
+            Use this to upload image
+            </summary>
+            <param name="file"></param>
+            <param name="Identity"></param>
+            <returns>Response code 00 means image was uploaded</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.createErrander(ErrandApp.Models.CreateErrander)">
+            <summary>
+            Use this to create errander/ errander owners
+            </summary>
+            <param name="errander"></param>
+            <returns>Response code 00 meeans errander was created successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.erranderLoginAuthentication(ErrandApp.Models.Login)">
+            <summary>
+            Use this to authenticate errander for login process. errander details will be returned if cussessfuly authenticated
+            </summary>
+            <param name="login"></param>
+            <returns>Response code 00 means errander login was successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErranderPassword(System.String,System.String)">
+            <summary>
+            Use this to update errander password
+            </summary>
+            <param name="Identity"></param>
+            <param name="NewPassword"></param>
+            <returns>Response code 00 means errnader password was updated successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErranderDetails(System.String)">
+            <summary>
+            Use this to get errander details
+            </summary>
+            <param name="Identity"></param>
+            <returns>Response code means errander details retrievd. You can also get errander details from 'erranderLoginAuthentication' after successful login</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.createErrandType(System.String,System.String,System.String)">
+            <summary>
+            Use this to create errand types.
+            </summary>
+            <param name="ErrandName"></param>
+            <param name="Category"></param>
+            <param name="Cost"></param>
+            <returns>Response code 00 means errand type created successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.deleteErrandType(System.String)">
+            <summary>
+            Use this to delete errand type
+            </summary>
+            <param name="ErrandID"></param>
+            <returns>Response code 00 means errand type deleted successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getAllErrandTypes">
+            <summary>
+            Use this to get all errand types created
+            </summary>
+            <returns>Response code 00 means all errand types successfuly retrievd</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErrandType(System.String,System.String,System.String,System.String)">
+            <summary>
+            Use this to uodate errand types
+            </summary>
+            <param name="ErrandID"></param>
+            <param name="ErrandName"></param>
+            <param name="Cost"></param>
+            <param name="Category"></param>
+            <returns>Response code 00 means errand type updated successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.startErrand(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Use this to start an errand. At this point the errandee is connected to an errander, and the errandee is no longer available for another errand while still running an errand
+            </summary>
+            <param name="ErrandID"></param>
+            <param name="ErranderID"></param>
+            <param name="ErrandeeID"></param>
+            <param name="PickUpLocation"></param>
+            <param name="DropOfLocation"></param>
+            <returns>Response code 00 means errand started</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.stopErrand(System.String,System.String)">
+            <summary>
+            Use this to stop an errand. When errand is stoped the errandee can be available for a new errand
+            </summary>
+            <param name="ErrandID"></param>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errand stoped</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.errandeeAvailability">
+            <summary>
+            Use this to get all available errandees that can run an errand.
+            </summary>
+            <returns>Response code 00 means available errandees retrieved successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.sendErrandeeLocation(System.String,System.String,System.String)">
+            <summary>
+            Use this to send errandee location
+            </summary>
+            <param name="ErrandeeEmail"></param>
+            <param name="Lat"></param>
+            <param name="Long"></param>
+            <returns>Response code 00 means errandee location sent</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErrandeeLocation(System.String,System.String,System.String)">
+            <summary>
+            Use this to update errandee location
+            </summary>
+            <param name="ErrandeeEmail"></param>
+            <param name="Lat"></param>
+            <param name="Long"></param>
+            <returns>Response 00 means errandee location updated</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getAllErrandeeLocations">
+            <summary>
+            Use this to get all errandee locations
+            </summary>
+            <returns>Response code 00 means all errandee locations retrived successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.sendErranderLocation(System.String,System.String,System.String)">
+            <summary>
+            Use this to send errander location
+            </summary>
+            <param name="ErranderEmail"></param>
+            <param name="Lat"></param>
+            <param name="Long"></param>
+            <returns>Response code 00 means errander location sent successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErranderLocation(System.String,System.String,System.String)">
+            <summary>
+            Use this to update errander location
+            </summary>
+            <param name="ErranderEmail"></param>
+            <param name="Lat"></param>
+            <param name="Long"></param>
+            <returns>Response code 00 means errander location updated successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getAllErranderLocations">
+            <summary>
+            Use this to get all errander locations
+            </summary>
+            <returns>Reponse code 00 means errander locations retieved successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.createErrandeePaymentDetails(System.String,System.Int64,System.String,System.String)">
+            <summary>
+            Use this to create errander payment details
+            </summary>
+            <param name="AccountName"></param>
+            <param name="AccountNo"></param>
+            <param name="BankName"></param>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errander payment details created successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErrandeePaymentDetails(System.String)">
+            <summary>
+            Use this to get errande payment details
+            </summary>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errander payment details retrieved</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErrandeePaymentDetails(System.String,System.Int64,System.String,System.String)">
+            <summary>
+            Use this to update errandee payment details
+            </summary>
+            <param name="AccountName"></param>
+            <param name="AccountNo"></param>
+            <param name="BankName"></param>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errandee payment details updated</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.postErrandeeEarnings(System.Decimal,System.String)">
+            <summary>
+            Use this to post errandee earnings when an errand is completed successfuly.
+            </summary>
+            <param name="Amount"></param>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errandee earning created successful</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErrandeeEarnings(System.String)">
+            <summary>
+            Use this to get errandee earnings.
+            </summary>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means errandee earnings retrieved successfuly</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.rateErrandee(System.String,System.String,System.Int32,System.String)">
+            <summary>
+            Use this to rate an errandee. Rating 1 means 1 STAR, rating 2 means 1 STARS, and rating 5 means 5 STARS
+            </summary>
+            <param name="ErrandeeID"></param>
+            <param name="Review"></param>
+            <param name="Rating"></param>
+            <param name="ErranderID"></param>
+            <returns>Response code 00 means rating successfuly posted/created</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErrandeeRating(System.String)">
+            <summary>
+            Use this to get errandee rating. 'StarRating' is the average rating, while 'data' displays an array of ratings
+            </summary>
+            <param name="ErrandeeID"></param>
+            <returns>Response code 00 means rating successfuly retrieved.</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.setErranderPaymentMethod(System.String,System.String)">
+            <summary>
+            Use this to set errander payment method
+            </summary>
+            <param name="ErranderID"></param>
+            <param name="PayMethod"></param>
+            <returns>Response code 00 means payment method set successfuly.</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.updateErranderPaymentMethod(System.String,System.String)">
+            <summary>
+            Use this to update payment method
+            </summary>
+            <param name="ErranderID"></param>
+            <param name="PayMethod"></param>
+            <returns>Response code 00 means payment method update</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.setErranderCardDetails(System.String,System.String,System.String,System.String)">
+            <summary>
+            Use this to set / accept or store errnader card details or information
+            </summary>
+            <param name="ErranderID"></param>
+            <param name="CardNo"></param>
+            <param name="Cvv"></param>
+            <param name="Exp"></param>
+            <returns>Response code 00 means errander card details stored successfuly.</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErranderCardDetails(System.String)">
+            <summary>
+            Use this to get errander card details
+            </summary>
+            <param name="ErranderID"></param>
+            <returns>Reponse code 00 means errander card details successfuly retrieved</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErranderHistory(System.String)">
+            <summary>
+            Use this to get errander errand history
+            </summary>
+            <param name="ErranderID"></param>
+            <returns>Response 00 means history succcesfuly retrieved</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErrandeeHistory(System.String)">
+            <summary>
+            Use this to get errandee errand history
+            </summary>
+            <param name="ErrandeeID"></param>
+            <returns>Response 00 means history successfuly retrieved</returns>
+        </member>
+        <member name="M:ErrandApp.WEBAPI.Controllers.ErrandAppController.getErranderPaymentMethod(System.String)">
+            <summary>
+            Use this to get errander payment method
+            </summary>
+            <param name="ErranderID"></param>
+            <returns>Response 00 means payment method successful retrieved</returns>
+        </member>
+    </members>
+</doc>

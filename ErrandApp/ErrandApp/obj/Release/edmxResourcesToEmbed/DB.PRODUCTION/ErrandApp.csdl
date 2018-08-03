@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ErrandAppModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AccountDetail">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AccountNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BankName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CardDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaskedCardNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ErranderID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CardType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CardNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CVV" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Exp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Earning">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DateEarned" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsLiquidated" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ErrandeeAvailability">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="isAvailable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ErrandeeLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandeeEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Long" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandeeProfileImage">
+    <Key>
+      <PropertyRef Name="ProfileImageId" />
+    </Key>
+    <Property Name="ProfileImageId" Type="Int32" Nullable="false" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ProfileImageName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandeeRating">
+    <Key>
+      <PropertyRef Name="RatingId" />
+    </Key>
+    <Property Name="RatingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ErranderID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Review" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Rating" Type="Int32" Nullable="false" />
+    <Property Name="RateDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="ErranderLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErranderEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Long" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErranderRegisteration">
+    <Key>
+      <PropertyRef Name="ErranderId" />
+    </Key>
+    <Property Name="ErranderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddedOn" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandType">
+    <Key>
+      <PropertyRef Name="ErrandTypeId" />
+    </Key>
+    <Property Name="ErrandTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddedOn" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Cost" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IsCash" Type="Boolean" Nullable="false" />
+    <Property Name="IsCard" Type="Boolean" Nullable="false" />
+    <Property Name="ErranderID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Registeration">
+    <Key>
+      <PropertyRef Name="RegisterationId" />
+    </Key>
+    <Property Name="RegisterationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErranderID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ErrandID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PickUpLocation" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="DropOffLocation" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="IsComplete" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ErrandAppEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AccountDetails" EntityType="Self.AccountDetail" />
+    <EntitySet Name="CardDetails" EntityType="Self.CardDetail" />
+    <EntitySet Name="Earnings" EntityType="Self.Earning" />
+    <EntitySet Name="ErrandeeAvailabilities" EntityType="Self.ErrandeeAvailability" />
+    <EntitySet Name="ErrandeeLocations" EntityType="Self.ErrandeeLocation" />
+    <EntitySet Name="ErrandeeProfileImages" EntityType="Self.ErrandeeProfileImage" />
+    <EntitySet Name="ErrandeeRatings" EntityType="Self.ErrandeeRating" />
+    <EntitySet Name="ErranderLocations" EntityType="Self.ErranderLocation" />
+    <EntitySet Name="ErranderRegisterations" EntityType="Self.ErranderRegisteration" />
+    <EntitySet Name="ErrandTypes" EntityType="Self.ErrandType" />
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethod" />
+    <EntitySet Name="Registerations" EntityType="Self.Registeration" />
+    <EntitySet Name="Requests" EntityType="Self.Request" />
+  </EntityContainer>
+</Schema>

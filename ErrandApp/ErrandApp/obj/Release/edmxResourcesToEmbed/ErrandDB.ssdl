@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onesimpleapiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ErrandeeAvailability">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="isAvailable" Type="bit" />
+  </EntityType>
+  <EntityType Name="ErrandeeLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandeeEmail" Type="nchar" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" MaxLength="200" />
+    <Property Name="Long" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ErrandeeProfileImage">
+    <Key>
+      <PropertyRef Name="ProfileImageId" />
+    </Key>
+    <Property Name="ProfileImageId" Type="int" Nullable="false" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="ProfileImageName" Type="nchar" MaxLength="100" />
+    <Property Name="Date" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErranderLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderEmail" Type="nchar" MaxLength="100" />
+    <Property Name="Lat" Type="nchar" MaxLength="200" />
+    <Property Name="Long" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="ErranderRegisteration">
+    <Key>
+      <PropertyRef Name="ErranderId" />
+    </Key>
+    <Property Name="ErranderId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nchar" MaxLength="200" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="100" />
+    <Property Name="Password" Type="nchar" MaxLength="100" />
+    <Property Name="Address" Type="nchar" MaxLength="100" />
+    <Property Name="Gender" Type="nchar" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ErrandType">
+    <Key>
+      <PropertyRef Name="ErrandTypeId" />
+    </Key>
+    <Property Name="ErrandTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErrandName" Type="nchar" MaxLength="100" />
+    <Property Name="Category" Type="nchar" MaxLength="100" />
+    <Property Name="Cost" Type="nchar" MaxLength="100" />
+    <Property Name="AddedOn" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="First3DRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="nchar" MaxLength="10" />
+    <Property Name="XmlRequest" Type="nvarchar(max)" />
+    <Property Name="Acs_url" Type="nchar" MaxLength="160" />
+    <Property Name="Datacash_reference" Type="nvarchar(max)" />
+    <Property Name="Pareq_message" Type="nvarchar(max)" />
+    <Property Name="Status" Type="nchar" MaxLength="70" />
+    <Property Name="TimeStamp" Type="nchar" MaxLength="130" />
+    <Property Name="Date" Type="nchar" MaxLength="130" />
+    <Property Name="Time" Type="nchar" MaxLength="130" />
+  </EntityType>
+  <EntityType Name="Registeration">
+    <Key>
+      <PropertyRef Name="RegisterationId" />
+    </Key>
+    <Property Name="RegisterationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FullName" Type="nchar" MaxLength="100" />
+    <Property Name="Email" Type="nchar" MaxLength="100" />
+    <Property Name="UserName" Type="nchar" MaxLength="100" />
+    <Property Name="PhoneNo" Type="nchar" MaxLength="100" />
+    <Property Name="Password" Type="nchar" MaxLength="200" />
+    <Property Name="Location" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ErranderID" Type="nchar" MaxLength="100" />
+    <Property Name="ErrandeeID" Type="nchar" MaxLength="100" />
+    <Property Name="ErrandID" Type="nchar" MaxLength="100" />
+    <Property Name="PickUpLocation" Type="nchar" MaxLength="100" />
+    <Property Name="DropOffLocation" Type="nchar" MaxLength="100" />
+    <Property Name="Status" Type="nchar" MaxLength="100" />
+    <Property Name="Date" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Second3DRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="nchar" MaxLength="40" />
+    <Property Name="XmlRequest" Type="nvarchar(max)" />
+    <Property Name="XmlResponse" Type="nvarchar(max)" />
+    <Property Name="Reason" Type="nchar" MaxLength="200" />
+    <Property Name="Status" Type="nchar" MaxLength="200" />
+    <Property Name="TimeStamp" Type="nchar" MaxLength="120" />
+    <Property Name="Date" Type="nchar" MaxLength="120" />
+    <Property Name="Time" Type="nchar" MaxLength="120" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenID" />
+    </Key>
+    <Property Name="TokenID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TokenNo" Type="nchar" MaxLength="10" />
+    <Property Name="CardType" Type="nchar" MaxLength="10" />
+    <Property Name="MaskedCardNumber" Type="nchar" MaxLength="50" />
+    <Property Name="MerchantNumber" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="nchar" MaxLength="10" />
+    <Property Name="TransactionNumber" Type="nchar" MaxLength="100" />
+    <Property Name="ReceiptNumber" Type="nchar" MaxLength="100" />
+    <Property Name="AcquirerResponseCode" Type="nchar" MaxLength="50" />
+    <Property Name="AuthorisationResult" Type="nchar" MaxLength="100" />
+    <Property Name="AuthoriseId" Type="nchar" MaxLength="50" />
+    <Property Name="CardType" Type="nchar" MaxLength="50" />
+    <Property Name="ResponseCode" Type="nchar" MaxLength="40" />
+    <Property Name="SettlementDate" Type="nchar" MaxLength="100" />
+    <Property Name="TimeStamp" Type="nchar" MaxLength="100" />
+    <Property Name="Amount" Type="nchar" MaxLength="100" />
+    <Property Name="SoapRequest" Type="nvarchar(max)" />
+    <Property Name="SoapResponse" Type="nvarchar(max)" />
+    <Property Name="ProcessedBy" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardPrivateKey" Type="nchar" MaxLength="50" />
+    <Property Name="CardPublicKey" Type="nchar" MaxLength="50" />
+    <Property Name="CardEncryptionKey" Type="nchar" MaxLength="200" />
+    <Property Name="AirtimePrivateKey" Type="nchar" MaxLength="50" />
+    <Property Name="AirtimePublicKey" Type="nchar" MaxLength="50" />
+    <Property Name="AirtimeEncryptionKey" Type="nchar" MaxLength="200" />
+    <Property Name="SmsPrivateKey" Type="nchar" MaxLength="50" />
+    <Property Name="SmsPublicKey" Type="nchar" MaxLength="50" />
+    <Property Name="SmsEncryptionKey" Type="nchar" MaxLength="200" />
+  </EntityType>
+  <EntityContainer Name="onesimpleapiModelStoreContainer">
+    <EntitySet Name="ErrandeeAvailability" EntityType="Self.ErrandeeAvailability" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeLocation" EntityType="Self.ErrandeeLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandeeProfileImage" EntityType="Self.ErrandeeProfileImage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErranderLocation" EntityType="Self.ErranderLocation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErranderRegisteration" EntityType="Self.ErranderRegisteration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrandType" EntityType="Self.ErrandType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="First3DRequest" EntityType="Self.First3DRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Registeration" EntityType="Self.Registeration" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Request" EntityType="Self.Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Second3DRequest" EntityType="Self.Second3DRequest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Token" EntityType="Self.Token" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Transactions" EntityType="Self.Transactions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

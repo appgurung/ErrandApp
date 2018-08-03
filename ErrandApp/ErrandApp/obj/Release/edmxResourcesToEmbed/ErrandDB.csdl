@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="onesimpleapiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="First3DRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Acs_url" Type="String" MaxLength="160" FixedLength="true" Unicode="true" />
+    <Property Name="Datacash_reference" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Pareq_message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="70" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="String" MaxLength="130" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="130" FixedLength="true" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="130" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Second3DRequest">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorID" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+    <Property Name="Time" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Token">
+    <Key>
+      <PropertyRef Name="TokenID" />
+    </Key>
+    <Property Name="TokenID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TokenNo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="CardType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MaskedCardNumber" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="MerchantNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Transaction">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VendorID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="TransactionNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ReceiptNumber" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AcquirerResponseCode" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AuthorisationResult" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AuthoriseId" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CardType" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="ResponseCode" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+    <Property Name="SettlementDate" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="TimeStamp" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Amount" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="SoapRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SoapResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessedBy" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Vendor">
+    <Key>
+      <PropertyRef Name="VendorID" />
+    </Key>
+    <Property Name="VendorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CardPrivateKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CardPublicKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="CardEncryptionKey" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="AirtimePrivateKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AirtimePublicKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="AirtimeEncryptionKey" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="SmsPrivateKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="SmsPublicKey" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="SmsEncryptionKey" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ErrandEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="First3DRequest" EntityType="Self.First3DRequest" />
+    <EntitySet Name="Second3DRequest" EntityType="Self.Second3DRequest" />
+    <EntitySet Name="Tokens" EntityType="Self.Token" />
+    <EntitySet Name="Transactions" EntityType="Self.Transaction" />
+    <EntitySet Name="Vendors" EntityType="Self.Vendor" />
+    <EntitySet Name="Registerations" EntityType="onesimpleapiModel.Registeration" />
+    <EntitySet Name="ErrandeeProfileImages" EntityType="onesimpleapiModel.ErrandeeProfileImage" />
+    <EntitySet Name="ErranderRegisterations" EntityType="onesimpleapiModel.ErranderRegisteration" />
+    <EntitySet Name="ErrandTypes" EntityType="onesimpleapiModel.ErrandType" />
+    <EntitySet Name="Requests" EntityType="onesimpleapiModel.Request" />
+    <EntitySet Name="ErrandeeAvailabilities" EntityType="onesimpleapiModel.ErrandeeAvailability" />
+    <EntitySet Name="ErrandeeLocations" EntityType="onesimpleapiModel.ErrandeeLocation" />
+    <EntitySet Name="ErranderLocations" EntityType="onesimpleapiModel.ErranderLocation" />
+  </EntityContainer>
+  <EntityType Name="Registeration">
+    <Key>
+      <PropertyRef Name="RegisterationId" />
+    </Key>
+    <Property Name="RegisterationId" Type="Int32" Nullable="false" />
+    <Property Name="FullName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandeeProfileImage">
+    <Key>
+      <PropertyRef Name="ProfileImageId" />
+    </Key>
+    <Property Name="ProfileImageId" Type="Int32" Nullable="false" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ProfileImageName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErranderRegisteration">
+    <Key>
+      <PropertyRef Name="ErranderId" />
+    </Key>
+    <Property Name="ErranderId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FullName" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Gender" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddedOn" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandType">
+    <Key>
+      <PropertyRef Name="ErrandTypeId" />
+    </Key>
+    <Property Name="ErrandTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandName" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Category" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="AddedOn" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Cost" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestId" />
+    </Key>
+    <Property Name="RequestId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErranderID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="ErrandID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="PickUpLocation" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="DropOffLocation" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Date" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErrandeeAvailability">
+    <Key>
+      <PropertyRef Name="AvailabilityID" />
+    </Key>
+    <Property Name="AvailabilityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandeeID" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="isAvailable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ErrandeeLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErrandeeEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Long" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ErranderLocation">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ErranderEmail" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Lat" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+    <Property Name="Long" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+  </EntityType>
+</Schema>
