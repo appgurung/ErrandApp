@@ -75,19 +75,6 @@ namespace ErrandApp.WEBAPI.Controllers
             return Ok(resp);
         }
 
-        /// <summary>
-        /// Use this to get errandee post details. You can also get errandee details from 'erandeeLoginAuthentication' after login
-        /// </summary>
-        /// <param name="Identity"></param>
-        /// <returns>Response code 00 means request/login was successful</returns>
-        [HttpGet]
-        [Route("getErrandeeDetails")]
-        public IHttpActionResult getErrandeeDetails(string Identity)
-        {
-            object resp = _svc.GetErrandeeDetails(Identity);
-
-            return Ok(resp);
-        }
 
         /// <summary>
         /// Use this to update password. Identity can be either errandee Email or PhoneNo
@@ -163,20 +150,6 @@ namespace ErrandApp.WEBAPI.Controllers
             return Ok(resp);
         }
 
-
-        /// <summary>
-        /// Use this to get errander details
-        /// </summary>
-        /// <param name="Identity"></param>
-        /// <returns>Response code means errander details retrievd. You can also get errander details from 'erranderLoginAuthentication' after successful login</returns>
-        [HttpGet]
-        [Route("getErranderDetails")]
-        public IHttpActionResult getErranderDetails(string Identity)
-        {
-            object resp = _svc.GetErranderDetails(Identity);
-
-            return Ok(resp);
-        }
 
         /// <summary>
         /// Use this to create errand types.

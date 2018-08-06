@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ErrandAppEntities-Web.config Connection String" description="ErrandAppEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://ErrandApp.UI/DB.PRODUCTION.ErrandApp.csdl|res://ErrandApp.UI/DB.PRODUCTION.ErrandApp.ssdl|res://ErrandApp.UI/DB.PRODUCTION.ErrandApp.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=tcp:valuecharge.database.windows.net;initial catalog=valuecharge;user id=valuecharge;password=Administrator*01;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\SwiftBox\\Git\\ErrandApp\\ErrandApp\\ErrandApp\.WEBAPI\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ErrandAppEntities']/@connectionString" />
+  </parameter>
+</parameters>

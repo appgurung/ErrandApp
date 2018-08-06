@@ -190,8 +190,6 @@ namespace ErrandApp.API.Controllers
                                           where x.Email == login.Identity
                                           select new
                                           {
-                                              ResponseCode = "00",
-                                              Message = "Request Successful",
                                               FullName = x.FullName.Trim(),
                                               UserName = x.UserName.Trim(),
                                               Location = x.Location.Trim(),
@@ -437,8 +435,6 @@ namespace ErrandApp.API.Controllers
                               where x.Email == login.Identity
                               select new
                               {
-                                  ResponseCode = "00",
-                                  Message = "Request Successful",
                                   FullName = x.FullName.Trim(),
                                   Location = x.Address.Trim(),
                                   ErranderID = x.ErranderId,
